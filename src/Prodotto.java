@@ -17,4 +17,12 @@ public class Prodotto {
         this.iva = iva;
     }
 
+    public double getPrezzoBase() {
+        return this.prezzo;
+    }
+
+    public double getPrezzoIva() {
+        return this.prezzo + (this.prezzo * this.iva / 100);
+    }
+
 }
