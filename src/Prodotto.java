@@ -4,15 +4,15 @@ public class Prodotto {
 
     public int codice;
     public String nome;
-    public String costruzione;
+    public String descrizione;
     public double prezzo;
     public double iva;
 
-    public Prodotto(String nome, String costruzione, double prezzo, double iva) {
+    public Prodotto(String nome, String descrizione, double prezzo, double iva) {
         Random random = new Random();
         this.codice = random.nextInt(99999) + 1;
         this.nome = nome;
-        this.costruzione = costruzione;
+        this.descrizione = descrizione;
         this.prezzo = prezzo;
         this.iva = iva;
     }
@@ -23,6 +23,10 @@ public class Prodotto {
 
     public double getPrezzoIva() {
         return this.prezzo + (this.prezzo * this.iva / 100);
+    }
+
+    public String getNomeEsteso() {
+        return codice + "-" + nome;
     }
 
 }
